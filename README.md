@@ -18,3 +18,39 @@ Challenge from Brad Traversy & Florin Pop on Udemy '50 Projects in 50 Days'
 
 
 #### Takeaways from the instructor
+
+1. HTML
+- audio tag + id
+- a container with id=buttons outside of the audio tags
+
+2. CSS
+
+3. JavaScript
+```
+const sounds = ['applause', 'boo', 'gasp', 'tada', 'victory', 'wrong'];
+
+sounds.forEach(sound => {
+    const btn = document.createElement('button');
+    btn.classList.add('btn');
+
+    btn.innerText = sound;
+
+    btn.addEventListener('click', () => {
+
+        stopSongs()
+
+        document.getElementById(sound).play();
+    })
+
+    document.getElementById('buttons').appendchild(btn);
+})
+
+function stopSongs() {
+    sounds.forEach(sound => {
+        const song = document.getElementById(sound);
+        song.pause();
+        song.currentTime = 0;
+    })
+}
+
+```
